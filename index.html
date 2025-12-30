@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Sebenza System — Manage Your Entire Business in One Platform</title>
+    <meta name="description"
+        content="Sebenza Systems brings together CRM, Inventory, HR, Accounting, and Task Management into a comprehensive solution that scales with your business. Save time, reduce costs, and make data-driven decisions with confidence.">
+    <meta name="keywords"
+        content="business management, CRM, inventory management, HR software, payroll, accounting software, ERP, enterprise software">
+    <meta name="author" content="Sebenza Systems Inc.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sebenza System — Manage Your Entire Business in One Platform">
+    <meta property="og:description"
+        content="Complete business management platform with CRM, Inventory, HR, Accounting, and more. Start your 14-day free trial today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sebenzasystems.com">
+
+    <!-- Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind for dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a5f',
+                        'primary-light': '#2e5a8f',
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #1e3a5f;
+            --color-primary-light: #2e5a8f;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Light mode defaults */
+        body {
+            background-color: #ffffff;
+            color: #0a0a0a;
+        }
+
+        /* Dark mode */
+        .dark body,
+        html.dark body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+
+        html.dark {
+            background-color: #0a0a0a;
+            color-scheme: dark;
+        }
+
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e3a5f;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #2e5a8f;
+        }
+
+        /* Smooth animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: rgba(30, 58, 95, 0.2);
+            color: #1e3a5f;
+        }
+
+        .dark ::selection {
+            background: rgba(46, 90, 143, 0.4);
+            color: #ffffff;
+        }
+    </style>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="antialiased transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
