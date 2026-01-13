@@ -101,8 +101,8 @@ export const INDUSTRIES: IndustryData[] = [
     features: ["Dashboard", "Clients/CRM", "Files/Documents", "Estimates/Quotes", "Invoices", "Retainer/Subscription Invoices", "Purchase Orders", "Payments", "Expenses", "Accounting", "My Services", "Task Management", "Meeting Management", "Calendar Management", "Event Management", "Stock/Inventory Management", "Employee/HR/Payroll", "My Package", "Add My Bank", "Payment Gateway", "Reports", "Add-ons", "Supports", "Help/Learning Center", "WhatsApp", "News & Updates", "Live Chat", "Settings"]
   },
   {
-    id: 'logistic',
-    title: "Logistic Management",
+    id: 'logistics',
+    title: "Logistics Management",
     icon: "Truck",
     description: "Optimize your supply chain with comprehensive fleet, inventory, and order management tools.",
     features: ["Dashboard", "Clients/CRM", "Files/Documents", "Estimates/Quotes", "Invoices", "Retainer/Subscription Invoices", "Purchase Orders", "Payments", "Expenses", "Accounting", "My Services", "Task Management", "Meeting Management", "Calendar Management", "Stock/Inventory Management", "Employee/HR/Payroll", "My Package", "Add My Bank", "Payment Gateway", "Reports", "Add-ons", "Supports", "Help/Learning Center", "WhatsApp", "News & Updates", "Live Chat", "Settings"]
