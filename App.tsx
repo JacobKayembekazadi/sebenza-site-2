@@ -34,92 +34,105 @@ const App: React.FC = () => {
       <main>
         <Hero />
 
-        {/* Impact Metrics Section - Mobile optimized bento grid */}
-        <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 relative z-10 -mt-8 md:-mt-20">
-          {/* Mobile: Horizontal scroll cards */}
-          <div className="md:hidden">
-            <div
-              className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {MOCK_METRICS.map((metric, idx) => (
+        {/* Trust Logos Section */}
+        <section className="py-12 bg-gray-50/50 dark:bg-gray-800/30">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <p className="text-center text-sm font-semibold text-gray-500 dark:text-gray-400 mb-10">
+              Powering operations for leading organizations:
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+              {[
+                { name: "Momentum", color: "bg-blue-50 dark:bg-blue-900/20" },
+                { name: "Velocity", color: "bg-emerald-50 dark:bg-emerald-900/20" },
+                { name: "Apex", color: "bg-amber-50 dark:bg-amber-900/20" },
+                { name: "Pinnacle", color: "bg-purple-50 dark:bg-purple-900/20" },
+                { name: "Summit", color: "bg-rose-50 dark:bg-rose-900/20" },
+                { name: "Horizon", color: "bg-cyan-50 dark:bg-cyan-900/20" }
+              ].map((company, idx) => (
                 <div
                   key={idx}
-                  className={`flex-shrink-0 w-[260px] snap-center p-6 rounded-2xl overflow-hidden relative ${idx === 0
-                      ? 'bg-[#1e3a5f] text-white'
-                      : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700'
-                    }`}
+                  className={`h-12 w-28 md:w-32 ${company.color} rounded-lg flex items-center justify-center font-bold text-gray-400 dark:text-gray-500 border border-gray-100 dark:border-gray-700`}
                 >
-                  <span className={`text-4xl font-mono font-bold tracking-tighter ${idx === 0 ? 'text-blue-300' : 'text-[#1e3a5f] dark:text-blue-400'}`}>
-                    {metric.value}
-                  </span>
-                  <h4 className={`text-base mt-3 font-medium ${idx === 0 ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
-                    {metric.label}
-                  </h4>
-                  <p className={`text-xs mt-2 font-light ${idx === 0 ? 'text-blue-100/70' : 'text-gray-600 dark:text-gray-300'}`}>
-                    Real-world impact for our partners.
-                  </p>
+                  {company.name}
                 </div>
               ))}
             </div>
           </div>
+        </section>
 
+        {/* Impact Metrics Section */}
+        <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
           {/* Desktop: Bento grid */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {MOCK_METRICS.map((metric, idx) => (
               <div
                 key={idx}
-                className={`group p-10 rounded-[2.5rem] border overflow-hidden relative transition-all duration-700 hover:-translate-y-2 ${idx === 0
-                  ? 'bg-[#1e3a5f] text-white border-[#1e3a5f]'
-                  : idx === 1
-                    ? 'bg-white dark:bg-gray-800 border-2 border-[#1e3a5f] dark:border-blue-400 shadow-xl shadow-[#1e3a5f]/10'
-                    : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
-                  }`}
+                className={`group p-8 md:p-10 rounded-3xl border overflow-hidden relative transition-all duration-500 hover:-translate-y-1 ${
+                  idx === 0
+                    ? 'bg-[#1e3a5f] text-white border-[#1e3a5f]'
+                    : idx === 1
+                      ? 'bg-white dark:bg-gray-800 border-2 border-[#1e3a5f] dark:border-blue-400 shadow-xl shadow-[#1e3a5f]/10'
+                      : 'bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700'
+                }`}
               >
                 <div className="relative z-10">
-                  <span className={`text-6xl md:text-7xl font-mono font-bold tracking-tighter ${idx === 0 ? 'text-blue-300' : 'text-[#1e3a5f] dark:text-blue-400'}`}>
+                  <span className={`text-5xl md:text-6xl font-black tracking-tight ${
+                    idx === 0 ? 'text-blue-300' : 'text-[#1e3a5f] dark:text-blue-400'
+                  }`}>
                     {metric.value}
                   </span>
-                  <h4 className={`text-xl mt-6 font-medium italic ${idx === 0 ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
+                  <h4 className={`text-lg md:text-xl mt-4 font-bold ${
+                    idx === 0 ? 'text-white' : 'text-gray-900 dark:text-white'
+                  }`}>
                     {metric.label}
                   </h4>
-                  <p className={`text-sm mt-4 font-light leading-relaxed ${idx === 0 ? 'text-blue-100/70' : 'text-gray-600 dark:text-gray-300'}`}>
-                    Real-world operational impact delivered to our partners.
+                  <p className={`text-sm mt-3 font-light leading-relaxed ${
+                    idx === 0 ? 'text-blue-100/70' : 'text-gray-600 dark:text-gray-300'
+                  }`}>
+                    Measured across our enterprise customers.
                   </p>
-                  <div className={`mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest ${idx === 0 ? 'text-blue-200/60' : 'text-gray-500 dark:text-gray-400'}`}>
-                    <Icon name="RefreshCcw" size={10} /> {metric.change}
+                  <div className={`mt-4 flex items-center gap-2 text-xs font-semibold ${
+                    idx === 0 ? 'text-blue-200/60' : 'text-gray-500 dark:text-gray-400'
+                  }`}>
+                    <Icon name="TrendingUp" size={14} /> {metric.change}
                   </div>
                 </div>
-                <div className={`absolute -right-8 -bottom-8 opacity-[0.05] group-hover:rotate-12 transition-transform duration-1000 ${idx === 0 ? 'text-white' : 'text-[#1e3a5f] dark:text-blue-400'}`}>
-                  <Icon name={metric.icon} size={160} />
+                <div className={`absolute -right-6 -bottom-6 opacity-[0.05] group-hover:rotate-12 transition-transform duration-700 ${
+                  idx === 0 ? 'text-white' : 'text-[#1e3a5f] dark:text-blue-400'
+                }`}>
+                  <Icon name={metric.icon} size={140} />
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Mission Statement - Mobile optimized */}
-        <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-32 md:grid md:grid-cols-2 md:gap-20 border-t border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-medium leading-tight md:leading-[0.95] tracking-tight text-gray-900 dark:text-white mb-6 md:mb-0">
+        {/* Mission Statement */}
+        <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 md:grid md:grid-cols-2 md:gap-16 items-center border-t border-gray-200 dark:border-gray-700">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-gray-900 dark:text-white mb-8 md:mb-0">
             Built to scale modern{' '}
             <span className="text-[#1e3a5f] dark:text-blue-400">organizations</span> with confidence.
           </h2>
-          <div className="space-y-6 md:space-y-8">
-            <p className="text-base md:text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
-              We build enterprise systems to unify your disconnected departments. Sebenza System provides integrated tools designed for streamlined operations and exponential growth.
+          <div className="space-y-6">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+              We replace 10+ disconnected tools with one unified platform. Sebenza System provides integrated software designed for streamlined operations and exponential growth.
             </p>
 
-            {/* Stats - Horizontal scroll on mobile */}
-            <div className="flex gap-6 md:gap-10 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1 md:flex-wrap" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 md:gap-10 pt-4">
               {[
                 { value: '200+', label: 'Integrations' },
                 { value: '14.2k', label: 'Daily Users' },
                 { value: '99.9%', label: 'Uptime' },
                 { value: '21+', label: 'Industries' },
               ].map((stat, idx) => (
-                <div key={idx} className="flex-shrink-0">
-                  <span className="block text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</span>
-                  <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 whitespace-nowrap">{stat.label}</span>
+                <div key={idx}>
+                  <span className="block text-2xl md:text-3xl font-black text-gray-900 dark:text-white mb-1">
+                    {stat.value}
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -136,31 +149,57 @@ const App: React.FC = () => {
 
         <FAQ />
 
-        {/* Final CTA - Mobile optimized */}
-        <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 flex flex-col gap-6 md:gap-12 text-center items-center border-t border-gray-200 dark:border-gray-700">
-          <div className="w-14 md:w-20 h-14 md:h-20 bg-[#1e3a5f]/10 dark:bg-blue-900/30 rounded-2xl md:rounded-3xl flex items-center justify-center text-[#1e3a5f] dark:text-blue-400 animate-bounce">
-            <Icon name="Zap" size={28} className="md:w-10 md:h-10" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight text-gray-900 dark:text-white max-w-4xl leading-tight">
-            Ready to <span className="italic text-gray-400 dark:text-gray-500">Transform</span> Your Business?
-          </h2>
-          <p className="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl font-light">
-            Join thousands of businesses that trust Sebenza Systems. Start your free 14-day trial today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
-            <a href="#signup" className="px-8 md:px-14 py-4 md:py-6 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-mono uppercase text-xs md:text-sm shadow-xl shadow-[#1e3a5f]/30 active:scale-95 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
-              Start Free Trial
-              <Icon name="ArrowRight" size={14} />
-            </a>
-            <a href="#contact" className="px-8 md:px-14 py-4 md:py-6 border border-gray-200 dark:border-gray-600 hover:border-[#1e3a5f] dark:hover:border-blue-400 transition-all rounded-full font-mono uppercase text-xs md:text-sm text-gray-700 dark:text-gray-200 flex items-center justify-center gap-2 w-full sm:w-auto">
-              <Icon name="Phone" size={14} />
-              Contact Sales
-            </a>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 font-mono text-[9px] md:text-[10px] text-gray-500 dark:text-gray-400 tracking-widest uppercase mt-4">
-            <div className="flex items-center gap-1.5"><Icon name="CheckCircle" size={12} className="text-emerald-500" /> Free trial</div>
-            <div className="flex items-center gap-1.5"><Icon name="CheckCircle" size={12} className="text-emerald-500" /> No credit card</div>
-            <div className="flex items-center gap-1.5"><Icon name="CheckCircle" size={12} className="text-emerald-500" /> 24/7 Support</div>
+        {/* Final CTA Section */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="bg-[#1e3a5f] rounded-[2rem] md:rounded-[3rem] p-10 md:p-20 text-center text-white relative overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
+
+              {/* Glow Effect */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/20 blur-[150px] -z-10" />
+
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8">
+                  Ready to streamline your business?
+                </h2>
+                <p className="text-blue-100/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 md:mb-12">
+                  Join thousands of businesses making the switch. Launch your integrated platform in as little as 24 hours.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+                  <a
+                    href="#signup"
+                    className="w-full sm:w-auto bg-white text-[#1e3a5f] px-10 py-5 rounded-full font-black text-lg hover:bg-blue-50 transition-colors shadow-2xl flex items-center justify-center gap-2"
+                  >
+                    Start Your Free Trial
+                    <Icon name="ArrowRight" size={20} />
+                  </a>
+                  <a
+                    href="#contact"
+                    className="w-full sm:w-auto border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Icon name="Phone" size={18} />
+                    Contact Sales
+                  </a>
+                </div>
+
+                {/* Trust badges */}
+                <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-10 md:mt-12 text-sm text-blue-100/60">
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" size={16} className="text-emerald-400" />
+                    14-day free trial
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" size={16} className="text-emerald-400" />
+                    No credit card required
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" size={16} className="text-emerald-400" />
+                    Cancel anytime
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
