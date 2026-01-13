@@ -35,7 +35,14 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 md:gap-3">
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-2 md:gap-3"
+        >
           <img
             src="/logo.jpg"
             alt="Sebenza System"
@@ -126,11 +133,34 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-xl p-6 flex flex-col gap-2 animate-in slide-in-from-top duration-300">
+          {/* Home Link */}
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="text-lg font-medium py-3 border-b border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors"
+          >
+            Home
+          </a>
           {NAV_LINKS.map(link => (
             <a
               key={link.name}
               href={link.href}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMenuOpen(false);
+                const targetId = link.href.replace('#', '');
+                const element = document.getElementById(targetId);
+                if (element) {
+                  const headerOffset = 80;
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+              }}
               className="text-lg font-medium py-3 border-b border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors"
             >
               {link.name}
@@ -160,12 +190,14 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
           <div className="pt-4 mt-2 flex flex-col gap-3">
             <a
               href="#login"
+              onClick={() => setIsMenuOpen(false)}
               className="text-center py-3 border border-gray-200 dark:border-gray-700 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-[#1e3a5f] transition-colors"
             >
               Login
             </a>
             <a
               href="#signup"
+              onClick={() => setIsMenuOpen(false)}
               className="text-center py-3 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-colors"
             >
               Get Started
