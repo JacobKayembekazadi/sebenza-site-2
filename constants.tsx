@@ -240,7 +240,7 @@ export const PRICING_TIERS: PricingTier[] = [
       '5GB Storage',
       'Basic Reports'
     ],
-    cta: 'Start Free Trial'
+    cta: 'Start Your Free Trial'
   },
   {
     id: 'professional',
@@ -260,7 +260,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'API Access'
     ],
     isPopular: true,
-    cta: 'Start Free Trial'
+    cta: 'Start Your Free Trial'
   },
   {
     id: 'enterprise',
