@@ -147,16 +147,25 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* As Seen In / Featured Section */}
+        {/* Social Proof Stats */}
         <div className="pt-8 md:pt-12 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-6 md:mb-8">
-            Trusted by 14,000+ businesses worldwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-70 transition-all duration-700">
-            <span className="text-lg md:text-xl font-serif font-black text-gray-600 dark:text-gray-400">TechCrunch</span>
-            <span className="text-lg md:text-xl font-bold tracking-tighter text-gray-600 dark:text-gray-400">FORBES</span>
-            <span className="text-lg md:text-xl font-black italic text-gray-600 dark:text-gray-400">Inc.</span>
-            <span className="text-lg md:text-xl font-mono font-bold tracking-widest text-gray-600 dark:text-gray-400 hidden sm:block">BLOOMBERG</span>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div className="text-center">
+              <span className="block text-2xl md:text-3xl font-black text-gray-900 dark:text-white">14,000+</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Businesses</span>
+            </div>
+            <div className="text-center">
+              <span className="block text-2xl md:text-3xl font-black text-gray-900 dark:text-white">21+</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Industries</span>
+            </div>
+            <div className="text-center">
+              <span className="block text-2xl md:text-3xl font-black text-gray-900 dark:text-white">99.9%</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Uptime</span>
+            </div>
+            <div className="text-center hidden sm:block">
+              <span className="block text-2xl md:text-3xl font-black text-gray-900 dark:text-white">4.9/5</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Rating</span>
+            </div>
           </div>
         </div>
       </div>
