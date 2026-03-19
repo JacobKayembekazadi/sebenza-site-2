@@ -142,10 +142,10 @@ const Hero: React.FC = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 md:mb-12 px-4 sm:px-0">
           <a
-            href="#signup"
+            href="https://app.sebenzas.com/#signup"
             className="w-full sm:w-auto px-8 py-4 md:py-5 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-bold text-base md:text-lg transition-all duration-300 shadow-xl shadow-[#1e3a5f]/30 active:scale-[0.98] flex items-center justify-center gap-2"
           >
-            Start Your Free Trial
+            Get Started
             <Icon name="ArrowRight" size={18} />
           </a>
           <button className="w-full sm:w-auto px-8 py-4 md:py-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-600 hover:border-[#1e3a5f] dark:hover:border-blue-400 rounded-full font-bold text-base md:text-lg transition-all duration-300 flex items-center justify-center gap-2">
@@ -158,11 +158,11 @@ const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-8 md:mb-12">
           <div className="flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />
-            <span>14-day free trial</span>
+            <span>Full access from day one</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />
-            <span>No credit card</span>
+            <span>Cancel anytime</span>
           </div>
           <div className="hidden sm:flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />

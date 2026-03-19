@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- S mark in rounded square -->
+  <rect x="0" y="0" width="48" height="48" rx="10" fill="#1e3a5f"/>
+  <text x="24" y="35" font-family="Georgia, serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">S</text>
+  <!-- Sebenza wordmark -->
+  <text x="60" y="34" font-family="'Inter', Arial, sans-serif" font-size="22" font-weight="800" fill="#1e3a5f" letter-spacing="-0.5">Sebenza</text>
+</svg>

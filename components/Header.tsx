@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 import { Theme, Language } from '../types';
@@ -44,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
           className="flex items-center gap-2 md:gap-3"
         >
           <img
-            src="/logo.jpg"
+            src="/logo.svg"
             alt="Sebenza System"
             className="h-9 md:h-11 w-auto"
           />
@@ -105,7 +104,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* Login Link - Desktop */}
           <a
-            href="#login"
+            href="https://app.sebenzas.com/#login"
             className="hidden lg:block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors px-4"
           >
             Login
@@ -113,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* CTA Button - Desktop */}
           <a
-            href="#signup"
+            href="https://app.sebenzas.com/#signup"
             className="hidden sm:flex px-5 md:px-6 py-2.5 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20"
           >
             Get Started
@@ -189,15 +188,13 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           <div className="pt-4 mt-2 flex flex-col gap-3">
             <a
-              href="#login"
-              onClick={() => setIsMenuOpen(false)}
+              href="https://app.sebenzas.com/#login"
               className="text-center py-3 border border-gray-200 dark:border-gray-700 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-[#1e3a5f] transition-colors"
             >
               Login
             </a>
             <a
-              href="#signup"
-              onClick={() => setIsMenuOpen(false)}
+              href="https://app.sebenzas.com/#signup"
               className="text-center py-3 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-colors"
             >
               Get Started

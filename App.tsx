@@ -173,7 +173,7 @@ const App: React.FC = () => {
                     onClick={openSignup}
                     className="w-full sm:w-auto bg-white text-[#1e3a5f] px-10 py-5 rounded-full font-black text-lg hover:bg-blue-50 transition-colors shadow-2xl flex items-center justify-center gap-2"
                   >
-                    Start Your Free Trial
+                    Get Started
                     <Icon name="ArrowRight" size={20} />
                   </button>
                   <a
@@ -188,15 +188,15 @@ const App: React.FC = () => {
                 <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-10 md:mt-12 text-sm text-blue-100/60">
                   <div className="flex items-center gap-2">
                     <Icon name="CheckCircle" size={16} className="text-emerald-400" />
-                    14-day free trial
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Icon name="CheckCircle" size={16} className="text-emerald-400" />
-                    No credit card required
+                    Full access from day one
                   </div>
                   <div className="flex items-center gap-2">
                     <Icon name="CheckCircle" size={16} className="text-emerald-400" />
                     Cancel anytime
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" size={16} className="text-emerald-400" />
+                    24/7 support
                   </div>
                 </div>
               </div>

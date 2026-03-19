@@ -164,10 +164,10 @@ const Features: React.FC = () => {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="#signup"
+            href="https://app.sebenzas.com/#signup"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20"
           >
-            Start Your Free Trial
+            Get Started
             <Icon name="ArrowRight" size={18} />
           </a>
         </div>

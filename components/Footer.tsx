@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Icon from './Icons';
 
@@ -11,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="md:col-span-1">
             <a href="#" className="flex items-center gap-3 mb-6">
-              <img src="/logo.jpg" alt="Sebenza System" className="h-10 w-auto rounded-lg" />
+              <img src="/logo.svg" alt="Sebenza System" className="h-10 w-auto rounded-lg" />
               <span className="text-xl font-black tracking-tight">SEBENZA</span>
             </a>
             <p className="text-blue-100/50 leading-relaxed mb-6 text-sm">
@@ -50,6 +49,8 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://app.sebenzas.com/#login" className="hover:text-white transition-colors">Login</a></li>
+              <li><a href="https://app.sebenzas.com/#signup" className="hover:text-white transition-colors">Get Started</a></li>
             </ul>
           </div>
 
@@ -76,7 +77,7 @@ const Footer: React.FC = () => {
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
             <span>All Systems Operational</span>
             <span className="mx-2">•</span>
-            <span>© 2025 Sebenza Systems Inc.</span>
+            <span>© 2026 Sebenza Systems. All rights reserved.</span>
           </div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

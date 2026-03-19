@@ -226,60 +226,25 @@ export const INDUSTRIES: IndustryData[] = [
 // ============================================
 export const PRICING_TIERS: PricingTier[] = [
   {
-    id: 'starter',
-    name: 'Starter',
-    price: '$29',
+    id: 'sebenza',
+    name: 'Sebenza',
+    price: 'R300',
     period: '/month',
-    description: 'Perfect for small teams getting started',
+    description: 'Base price for 1 user. Add team members at R100/user/month.',
     features: [
-      'Up to 5 users',
-      'CRM & Client Management',
-      'Basic Invoicing',
-      'Expense Tracking',
-      'Email Support',
-      '5GB Storage',
-      'Basic Reports'
-    ],
-    cta: 'Start Your Free Trial'
-  },
-  {
-    id: 'professional',
-    name: 'Professional',
-    price: '$79',
-    period: '/month',
-    description: 'For growing businesses with advanced needs',
-    features: [
-      'Up to 25 users',
-      'Everything in Starter',
-      'HR & Payroll Management',
-      'Inventory Management',
-      'Advanced Accounting',
-      'Priority Support',
-      '50GB Storage',
-      'Advanced Analytics',
-      'API Access'
+      'All features included',
+      'Client & Project Management',
+      'Billing & Invoicing',
+      'HR & Payroll',
+      'Document Management (2GB free)',
+      'Time Tracking',
+      'AI Assistant',
+      'Unlimited Cases/Projects',
+      'Multi-currency Support',
+      'Priority Support'
     ],
     isPopular: true,
-    cta: 'Start Your Free Trial'
-  },
-  {
-    id: 'enterprise',
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    description: 'For large organizations with custom requirements',
-    features: [
-      'Unlimited users',
-      'Everything in Professional',
-      'Custom Integrations',
-      'Dedicated Account Manager',
-      'On-premise Deployment Option',
-      'Unlimited Storage',
-      'SLA Guarantee',
-      'Custom Training',
-      'White-label Options'
-    ],
-    cta: 'Contact Sales'
+    cta: 'Get Started'
   }
 ];
 
@@ -292,8 +257,8 @@ export const FAQ_DATA: FAQData[] = [
     answer: "Sebenza System is a comprehensive business management platform that brings together CRM, Inventory, HR, Accounting, and Task Management into one integrated solution. It's designed to help businesses of all sizes streamline operations, reduce costs, and make data-driven decisions."
   },
   {
-    question: "Is there a free trial available?",
-    answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card is required to start your trial, and you can cancel anytime."
+    question: "How do I get started?",
+    answer: "Simply click 'Get Started' and create your account. You get full access from day one — all features, no restrictions. Cancel anytime."
   },
   {
     question: "Can I switch plans later?",

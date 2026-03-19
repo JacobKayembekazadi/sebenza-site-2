@@ -128,8 +128,8 @@ const IndustrySwitcher: React.FC = () => {
             )}
           </div>
 
-          <a href="#signup" className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20">
-            Start Your Free Trial
+          <a href="https://app.sebenzas.com/#signup" className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20">
+            Get Started
             <Icon name="ArrowRight" size={16} />
           </a>
         </div>
@@ -219,8 +219,8 @@ const IndustrySwitcher: React.FC = () => {
 
             {/* Footer */}
             <div className="mt-auto pt-6 border-t border-gray-200 dark:border-gray-600 flex flex-wrap items-center gap-4">
-              <a href="#signup" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20">
-                Start Your Free Trial
+              <a href="https://app.sebenzas.com/#signup" className="inline-flex items-center gap-2 px-8 py-4 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20">
+                Get Started
                 <Icon name="ArrowRight" size={16} />
               </a>
               <a href="#" className="text-sm font-semibold text-[#1e3a5f] dark:text-blue-400 hover:underline flex items-center gap-2">
