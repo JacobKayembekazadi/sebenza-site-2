@@ -16,7 +16,7 @@ const Pricing: React.FC = () => {
   const tiers = country.tiers || PRICING_TIERS;
   const lang = country.language;
 
-  const tier = tiers[0];
+  const tier = PRICING_TIERS[0]; // features come from constants, pricing from country
 
   return (
     <section id="pricing" className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 border-t border-gray-200 dark:border-gray-700">
@@ -45,8 +45,8 @@ const Pricing: React.FC = () => {
             <h3 className="text-xl font-medium mb-2 text-white">{tier.name}</h3>
             <p className="text-sm font-light mb-4 text-white/70">{tier.description}</p>
             <div className="flex items-baseline gap-1">
-              <span className="text-5xl font-bold text-white">{tier.price}</span>
-              <span className="text-lg text-white/70">{tier.period}</span>
+              <span className="text-5xl font-bold text-white">{country.symbol}{country.pricing.base}</span>
+              <span className="text-lg text-white/70">/month</span>
             </div>
           </div>
 
