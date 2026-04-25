@@ -40,8 +40,8 @@ const Features: React.FC = () => {
   };
 
   // Split features into highlighted (first 3) and regular
-  const highlightedFeatures = FEATURES.slice(0, 3);
-  const regularFeatures = FEATURES.slice(3);
+  const highlightedFeatures = localFeatures.slice(0, 3);
+  const regularFeatures = localFeatures.slice(3);
 
   return (
     <section id="features" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900/50">
