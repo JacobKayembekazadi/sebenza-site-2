@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 import { Theme, Language } from '../types';
 import Icon from './Icons';
+import { useCountry, COUNTRIES } from '../services/country-context';
+import { t } from '../services/translations';
 
 interface HeaderProps {
   theme: Theme;
@@ -18,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(Language.EN);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const { country, setCountry } = useCountry();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -65,28 +68,32 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         {/* Right Side Actions */}
         <div className="flex items-center gap-2 md:gap-3">
           {/* Language Selector - Desktop only */}
+          {/* Country Picker */}
           <div className="relative hidden md:block">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-gray-200 dark:border-gray-700 hover:border-[#1e3a5f] dark:hover:border-blue-400 transition-all text-xs font-medium bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm"
             >
-              <span>{LANGUAGES.find(l => l.code === currentLang)?.flag}</span>
-              <span className="text-gray-700 dark:text-gray-200">{LANGUAGES.find(l => l.code === currentLang)?.label}</span>
+              <span>{country.flag}</span>
+              <span className="text-gray-700 dark:text-gray-200">{country.code}</span>
               <Icon name="ChevronDown" size={12} className="text-gray-400" />
             </button>
             {isLangOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden min-w-[100px] z-50">
-                {LANGUAGES.map(lang => (
+              <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden min-w-[180px] z-50">
+                <div className="px-3 py-2 text-xs text-gray-400 border-b border-gray-100 dark:border-gray-700">Select your country</div>
+                {COUNTRIES.map(c => (
                   <button
-                    key={lang.code}
-                    onClick={() => { setCurrentLang(lang.code); setIsLangOpen(false); }}
-                    className={`w-full px-4 py-2.5 text-left text-sm flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-                      currentLang === lang.code
-                        ? 'text-[#1e3a5f] dark:text-blue-400 bg-blue-50 dark:bg-gray-700'
+                    key={c.code}
+                    onClick={() => { setCountry(c.code); setIsLangOpen(false); }}
+                    className={`w-full px-4 py-2.5 text-left text-sm flex items-center gap-2.5 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
+                      country.code === c.code
+                        ? 'text-[#1e3a5f] dark:text-blue-400 bg-blue-50 dark:bg-gray-700 font-medium'
                         : 'text-gray-600 dark:text-gray-300'
                     }`}
                   >
-                    <span>{lang.flag}</span> {lang.label}
+                    <span className="text-base">{c.flag}</span>
+                    <span>{c.name}</span>
+                    <span className="ml-auto text-xs text-gray-400">{c.languageLabel}</span>
                   </button>
                 ))}
               </div>
@@ -104,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* Login Link - Desktop */}
           <a
-            href="https://app.sebenzas.com/#login"
+            href="https://app.sebenzas.com/login"
             className="hidden lg:block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors px-4"
           >
             Login
@@ -112,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* CTA Button - Desktop */}
           <a
-            href="https://app.sebenzas.com/#signup"
+            href="https://app.sebenzas.com/signup"
             className="hidden sm:flex px-5 md:px-6 py-2.5 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-[#1e3a5f]/20"
           >
             Get Started
@@ -188,13 +195,13 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           <div className="pt-4 mt-2 flex flex-col gap-3">
             <a
-              href="https://app.sebenzas.com/#login"
+              href="https://app.sebenzas.com/login"
               className="text-center py-3 border border-gray-200 dark:border-gray-700 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-[#1e3a5f] transition-colors"
             >
               Login
             </a>
             <a
-              href="https://app.sebenzas.com/#signup"
+              href="https://app.sebenzas.com/signup"
               className="text-center py-3 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-semibold transition-colors"
             >
               Get Started

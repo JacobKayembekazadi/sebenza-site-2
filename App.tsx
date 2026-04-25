@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Theme } from './types';
 import Header from './components/Header';
@@ -14,6 +13,7 @@ import AuthModal from './components/AuthModal';
 import IntegrationsModal from './components/IntegrationsModal';
 import Icon from './components/Icons';
 import { MOCK_METRICS } from './constants';
+import { CountryProvider } from './services/country-context';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
@@ -58,6 +58,7 @@ const App: React.FC = () => {
   const switchAuthMode = () => setAuthModal({ ...authModal, mode: authModal.mode === 'login' ? 'signup' : 'login' });
 
   return (
+    <CountryProvider>
     <div className="min-h-screen transition-colors duration-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-x-hidden">
       <Header theme={theme} toggleTheme={toggleTheme} />
 
@@ -220,7 +221,8 @@ const App: React.FC = () => {
         onClose={() => setIntegrationsModalOpen(false)}
       />
     </div>
+    </CountryProvider>
   );
-};
+}
 
 export default App;

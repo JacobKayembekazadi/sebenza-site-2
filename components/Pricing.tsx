@@ -1,6 +1,8 @@
 import React from 'react';
 import { PRICING_TIERS } from '../constants';
 import Icon from './Icons';
+import { useCountry } from '../services/country-context';
+import { t as tr } from '../services/translations';
 
 const PER_SEAT_ROWS = [
   { users: '1 user', price: 'R300/mo' },
@@ -10,7 +12,11 @@ const PER_SEAT_ROWS = [
 ];
 
 const Pricing: React.FC = () => {
-  const tier = PRICING_TIERS[0];
+  const { country } = useCountry();
+  const tiers = country.tiers || PRICING_TIERS;
+  const lang = country.language;
+
+  const tier = tiers[0];
 
   return (
     <section id="pricing" className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-32 border-t border-gray-200 dark:border-gray-700">
@@ -71,7 +77,7 @@ const Pricing: React.FC = () => {
             </div>
             <h3 className="text-xl font-medium mb-2 text-gray-900 dark:text-white">Need more users?</h3>
             <p className="text-sm font-light text-gray-600 dark:text-gray-300 mb-6">
-              Add team members at <span className="font-semibold text-[#1e3a5f] dark:text-blue-400">R100/user/month</span>. Volume pricing kicks in automatically.
+              Add team members at <span className="font-semibold text-[#1e3a5f] dark:text-blue-400">{country.symbol}{country.pricing.seat}/user/month</span>. Volume pricing kicks in automatically.
             </p>
 
             <div className="rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden">
@@ -95,7 +101,7 @@ const Pricing: React.FC = () => {
           </div>
 
           <p className="mt-6 text-xs text-gray-500 dark:text-gray-400 font-light">
-            All prices in South African Rand (ZAR). Billed monthly. Cancel anytime.
+            {`All prices in ${country.currency}. Billed monthly. Cancel anytime.`}
           </p>
         </div>
       </div>
