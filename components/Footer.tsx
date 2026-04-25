@@ -36,32 +36,32 @@ const Footer: React.FC = () => {
 
           {/* Products Column */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Products</h4>
+            <h4 className="font-bold text-lg mb-6">{t('footerProduct', lang)}</h4>
             <ul className="space-y-4 text-blue-100/60">
               <li><a href="#features" className="hover:text-white transition-colors">CRM & Sales</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Inventory Management</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">HR & Payroll</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Project Management</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors">{t('pricing', lang)}</a></li>
             </ul>
           </div>
 
           {/* Company Column */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Company</h4>
+            <h4 className="font-bold text-lg mb-6">{t('footerCompany', lang)}</h4>
             <ul className="space-y-4 text-blue-100/60">
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footerAbout', lang)}</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-              <li><a href="https://app.sebenzas.com/#login" className="hover:text-white transition-colors">Login</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footerCareers', lang)}</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">{t('footerContact', lang)}</a></li>
+              <li><a href="https://app.sebenzas.com/#login" className="hover:text-white transition-colors">{t('login', lang)}</a></li>
               <li><a href="https://app.sebenzas.com/#signup" className="hover:text-white transition-colors">Get Started</a></li>
             </ul>
           </div>
 
           {/* Newsletter Column */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Stay Updated</h4>
+            <h4 className="font-bold text-lg mb-6">{t('footerNewsletter', lang)}</h4>
             <p className="text-sm text-blue-100/60 mb-4">Get monthly updates on new features and tips.</p>
             <div className="flex bg-white/5 p-1 rounded-full border border-white/10">
               <input

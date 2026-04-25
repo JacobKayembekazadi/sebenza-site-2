@@ -1,7 +1,10 @@
 
 import React, { useState } from 'react';
-import { FAQ_DATA } from '../constants';
+// FAQ now from translated-data
 import Icon from './Icons';
+import { useCountry } from '../services/country-context';
+import { getFAQ } from '../services/translated-data';
+import { t } from '../services/translations';
 
 const FAQItem: React.FC<{
   question: string;
@@ -42,6 +45,10 @@ const FAQItem: React.FC<{
 );
 
 const FAQ: React.FC = () => {
+  const { country } = useCountry();
+  const lang = country.language;
+  const faqItems = getFAQ(lang);
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -59,7 +66,7 @@ const FAQ: React.FC = () => {
 
         {/* FAQ Accordion */}
         <div className="space-y-4">
-          {FAQ_DATA.map((faq, idx) => (
+          {faqItems.map((faq, idx) => (
             <FAQItem
               key={idx}
               question={faq.question}

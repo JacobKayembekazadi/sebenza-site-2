@@ -1,9 +1,16 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { FEATURES } from '../constants';
+// Features now come from translated-data
 import Icon from './Icons';
+import { useCountry } from '../services/country-context';
+import { getFeatures } from '../services/translated-data';
+import { t } from '../services/translations';
 
 const Features: React.FC = () => {
+  const { country } = useCountry();
+  const lang = country.language;
+  const localFeatures = getFeatures(lang);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -76,7 +83,7 @@ const Features: React.FC = () => {
             className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 px-1"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {FEATURES.map((feature, idx) => (
+            {localFeatures.map((feature, idx) => (
               <div
                 key={idx}
                 className="flex-shrink-0 w-[260px] snap-start p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl"
