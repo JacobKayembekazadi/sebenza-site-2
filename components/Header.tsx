@@ -21,6 +21,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   const [currentLang, setCurrentLang] = useState(Language.EN);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { country, setCountry } = useCountry();
+  const lang = country.language;
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -80,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
             </button>
             {isLangOpen && (
               <div className="absolute top-full right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl overflow-hidden min-w-[180px] z-50">
-                <div className="px-3 py-2 text-xs text-gray-400 border-b border-gray-100 dark:border-gray-700">Select your country</div>
+                <div className="px-3 py-2 text-xs text-gray-400 border-b border-gray-100 dark:border-gray-700">{t('selectCountry', lang)}</div>
                 {COUNTRIES.map(c => (
                   <button
                     key={c.code}

@@ -1,7 +1,12 @@
 import React from 'react';
 import Icon from './Icons';
+import { useCountry } from '../services/country-context';
+import { t } from '../services/translations';
 
 const Footer: React.FC = () => {
+  const { country } = useCountry();
+  const lang = country.language;
+
   return (
     <footer className="bg-[#1e3a5f] text-white pt-16 md:pt-20 pb-8 md:pb-10">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -61,7 +66,7 @@ const Footer: React.FC = () => {
             <div className="flex bg-white/5 p-1 rounded-full border border-white/10">
               <input
                 type="email"
-                placeholder="Email address"
+                placeholder={t('footerEmailPlaceholder', lang)}
                 className="bg-transparent border-none focus:ring-0 focus:outline-none px-4 text-sm flex-1 placeholder-blue-100/40"
               />
               <button className="bg-blue-500 hover:bg-blue-400 p-3 rounded-full transition-colors">
@@ -80,8 +85,8 @@ const Footer: React.FC = () => {
             <span>© 2026 Sebenza Systems. All rights reserved.</span>
           </div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footerPrivacy', lang)}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('footerTerms', lang)}</a>
             <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
         </div>

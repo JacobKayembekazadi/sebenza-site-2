@@ -1,8 +1,13 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Icon from './Icons';
+import { useCountry } from '../services/country-context';
+import { t } from '../services/translations';
 
 const Hero: React.FC = () => {
+  const { country } = useCountry();
+  const lang = country.language;
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [typedText, setTypedText] = useState("FOR LAW FIRMS");
 
@@ -120,9 +125,9 @@ const Hero: React.FC = () => {
 
         {/* Main Headline */}
         <h1 className="text-center text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 dark:text-white tracking-tight mb-6 md:mb-8 max-w-5xl mx-auto">
-          <span className="block">The Operating System</span>
+          <span className="block">{t('heroTitle1', lang)}</span>
           <span className="block mt-1 md:mt-2">
-            for Business at{' '}
+            {t('heroTitle2', lang)}{' '}
             <span className="relative inline-block">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a5f] via-blue-600 to-blue-500 dark:from-blue-400 dark:via-blue-300 dark:to-cyan-300">
                 Scale
@@ -136,13 +141,13 @@ const Hero: React.FC = () => {
 
         {/* Subheadline */}
         <p className="text-center max-w-xl md:max-w-2xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 md:mb-10 leading-relaxed px-2">
-          CRM, Inventory, HR, Accounting & Project Management — all in one platform built for <span className="font-semibold text-[#1e3a5f] dark:text-blue-400">21+ industries</span>.
+          {t('heroSubtitle', lang)} <span className="font-semibold text-[#1e3a5f] dark:text-blue-400">{t('heroIndustries', lang)}</span>.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-10 md:mb-12 px-4 sm:px-0">
           <a
-            href="https://app.sebenzas.com/#signup"
+            href="https://app.sebenzas.com/signup"
             className="w-full sm:w-auto px-8 py-4 md:py-5 bg-[#1e3a5f] hover:bg-[#2e5a8f] text-white rounded-full font-bold text-base md:text-lg transition-all duration-300 shadow-xl shadow-[#1e3a5f]/30 active:scale-[0.98] flex items-center justify-center gap-2"
           >
             Get Started
@@ -158,15 +163,15 @@ const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-8 md:mb-12">
           <div className="flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />
-            <span>Full access from day one</span>
+            <span>{t('fullAccess', lang)}</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />
-            <span>Cancel anytime</span>
+            <span>{t('cancelAnytime', lang)}</span>
           </div>
           <div className="hidden sm:flex items-center gap-1.5">
             <Icon name="CheckCircle" size={16} className="text-emerald-500" />
-            <span>24/7 support</span>
+            <span>{t('support247', lang)}</span>
           </div>
         </div>
 
@@ -202,7 +207,7 @@ const Hero: React.FC = () => {
           onClick={scrollToFeatures}
           className="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors group"
         >
-          <span className="text-xs font-medium uppercase tracking-widest hidden md:block">Scroll to explore</span>
+          <span className="text-xs font-medium uppercase tracking-widest hidden md:block">{t('scrollToExplore', lang)}</span>
           <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-1.5">
             <div className="w-1.5 h-3 bg-current rounded-full animate-bounce" />
           </div>
